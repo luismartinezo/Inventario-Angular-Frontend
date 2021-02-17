@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Mercancia } from '../../Models/mercancia';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Mercancia } from "../../Models/mercancia";
+import { ProductoService } from "../../Services/producto.service";
 
 @Component({
-  selector: 'app-mercancia',
-  templateUrl: './mercancia.component.html',
-  styleUrls: ['./mercancia.component.css']
+  selector: "app-mercancia",
+  templateUrl: "./mercancia.component.html",
+  styleUrls: ["./mercancia.component.css"]
 })
 export class MercanciaComponent implements OnInit {
-
- productos: Mercancia[] = [];
+  productos: Mercancia[] = [];
   msjOK = "";
-  constructor(private productoService: ProductoService, private router: Router) {}
+  constructor(
+    private productoService: ProductoService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.cargarProductos();
@@ -27,7 +30,7 @@ export class MercanciaComponent implements OnInit {
       }
     );
   }
-  eliminarCliente(id: number): void {
+  eliminarProducto(id: number): void {
     console.log(id);
     if (confirm(`Seguro que desea eliminar el registro ${id}`)) {
       this.productoService.borrar(id).subscribe(data => {
@@ -40,5 +43,4 @@ export class MercanciaComponent implements OnInit {
     // if(id != null || id ==0)
     // this.clienteService.borrar()
   }
-
 }

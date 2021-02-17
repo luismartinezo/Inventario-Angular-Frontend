@@ -1,26 +1,29 @@
-<button type="button" class="btn btn-primary float-right" routerLink="/nuevo-cliente">Nuevo Producto</button>
+<button type="button" class="btn btn-primary float-right" routerLink="/nuevo-producto">Nuevo Producto</button>
 
 <table class="table">
 	<thead class="thead-dark">
 		<tr>
 			<th scope="col">#</th>
 			<th scope="col">Nombre</th>
-			<th scope="col">Apellidos</th>
-			<th scope="col">Observaciones</th>
+			<th scope="col">Cantidad</th>
+			<th scope="col">Fecha Ingreso</th>
+			<th scope="col">Usuario</th>
 			<th></th>
 			<th></th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let cliente of clientes">
-			<th scope="row">{{cliente.id}}</th>
-			<td>{{cliente.nombre}}</td>
-			<td>{{cliente.apellido1}} {{cliente.apellido2}}</td>
-			<td>{{cliente.observaciones}}</td>
+		<tr *ngFor="let producto of productos">
+			<th scope="row">{{producto.id}}</th>
+			<td>{{producto.nombre_producto}}</td>
+			<td>{{producto.cantidad}}</td>
+			<td>{{producto.fecha_ingreso}}</td>
+			<td>{{producto.usuario_id}}</td>
 			<td><button type="button" class="btn btn-info">Detalle</button></td>
 			<td><button type="button" class="btn btn-warning">Editar</button></td>
-			<td><button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id)">Eliminar</button></td>
+			<td><button type="button" class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
+			</td>
 		</tr>
 	</tbody>
 </table>
