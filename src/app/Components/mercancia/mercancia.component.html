@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary float-right" routerLink="/nuevo-cliente">Nuevo Producto</button>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellidos</th>
+			<th scope="col">Observaciones</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let cliente of clientes">
+			<th scope="row">{{cliente.id}}</th>
+			<td>{{cliente.nombre}}</td>
+			<td>{{cliente.apellido1}} {{cliente.apellido2}}</td>
+			<td>{{cliente.observaciones}}</td>
+			<td><button type="button" class="btn btn-info">Detalle</button></td>
+			<td><button type="button" class="btn btn-warning">Editar</button></td>
+			<td><button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id)">Eliminar</button></td>
+		</tr>
+	</tbody>
+</table>
