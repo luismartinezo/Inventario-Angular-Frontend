@@ -17,7 +17,7 @@ import { UsuarioComponent } from "./Components/usuario/usuario.component";
 const routes: Routes = [
   // home
   { path: "home", component: HomeComponent },
-   {path: '**', redirectTo: 'home', pathMatch: 'full'},
+  //  {path: '**', redirectTo: 'home', pathMatch: 'full'},
   { path: "", component: HomeComponent },
 
   // mercancias o producto

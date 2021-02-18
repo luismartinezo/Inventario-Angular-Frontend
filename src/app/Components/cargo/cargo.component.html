@@ -1,3 +1,23 @@
-<p>
-cargo works!
-</p>
+<button type="button" class="btn btn-primary float-right" routerLink="/nuevo-cargo">Nuevo Cargo</button>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let cargo of cargos">
+			<th scope="row">{{cargo.id}}</th>
+			<td>{{cargo.nombre}}</td>
+			<td><button type="button" class="btn btn-info" routerLink="/detalle/{{cargo.id}}">Detalle</button></td>
+			<td><button type="button" class="btn btn-warning" routerLink="/editar/{{cargo.id}}">Editar</button></td>
+			<td><button type="button" class="btn btn-danger" (click)="eliminarCargo(cargo.id)">Eliminar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
