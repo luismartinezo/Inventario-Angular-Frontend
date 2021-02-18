@@ -21,7 +21,8 @@ import { DetalleCargoComponent } from './Components/cargo/detalle-cargo/detalle-
 import { EditarProductoComponent } from './Components/mercancia/editar-producto/editar-producto.component';
 import { DetalleProductoComponent } from './Components/mercancia/detalle-producto/detalle-producto.component';
 import { EditarUsuarioComponent } from './Components/usuario/editar-usuario/editar-usuario.component';
-import { DetalleUsuarioComponent } from './Components/usuario/detalle-usuario/detalle-usuario.component'
+import { DetalleUsuarioComponent } from './Components/usuario/detalle-usuario/detalle-usuario.component';
+import { HomeComponent } from './Components/home/home.component'
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { DetalleUsuarioComponent } from './Components/usuario/detalle-usuario/de
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  declarations: [AppComponent, FooterComponent, NavbarComponent, CargoComponent, UsuarioComponent, MercanciaComponent, NuevoProductoComponent, NuevoUsuarioComponent, NuevoCargoComponent, EditarCargoComponent, DetalleCargoComponent, EditarProductoComponent, DetalleProductoComponent, EditarUsuarioComponent, DetalleUsuarioComponent],
+  declarations: [AppComponent, FooterComponent, NavbarComponent, CargoComponent, UsuarioComponent, MercanciaComponent, NuevoProductoComponent, NuevoUsuarioComponent, NuevoCargoComponent, EditarCargoComponent, DetalleCargoComponent, EditarProductoComponent, DetalleProductoComponent, EditarUsuarioComponent, DetalleUsuarioComponent, HomeComponent],
   bootstrap: [AppComponent],
   providers: [ProductoService, UsuarioService, CargoService]
 })
