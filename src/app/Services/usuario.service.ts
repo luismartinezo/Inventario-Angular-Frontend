@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Usuario } from "../Models/usuario";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 const cabecera = {
   headers: new HttpHeaders({ "Content-TYpe": "application/json" })

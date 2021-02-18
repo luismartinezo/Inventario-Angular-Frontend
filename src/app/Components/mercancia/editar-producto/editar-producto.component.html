@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" *ngIf="form.nombre_producto && !failInit">
 	<div class="row">
-		<div class="col-md-12">
-			<h5>Cantidaduev Producto</h5>
-			<form name="form" (ngSubmit)="onCreate(f)" #f="ngForm" novalidate>
+		<div class="col-md-8">
+			<h5>Actualizar Producto</h5>
+			<form (ngSubmit)="onUpdate()" #f="ngForm" novalidate>
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
@@ -25,17 +25,17 @@
 								</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<select name="usuario_id"  [(ngModel)]="form.usuario_id" class="form-control">
-                      <option value="0">-Select-</option>
-                      <option *ngFor="let item of usuarios" value="{{item.id}}">{{item.nombre}}</option>
-                    </select>
+										<select></select>
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-success btn-lg" [disabled]="!f.valid">Crear</button>
+								<button type="submit" class="btn btn-success btn-lg" [disabled]="!f.valid">Actualizar</button>
 							</div>
 			</form>
+			<div>
+				<button class="btn btn-primary float-left mr-3" (click)="volver()">Volver</button>
+			</div>
 		</div>
 	</div>
 </div>

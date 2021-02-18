@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Mercancia } from "../../../Models/mercancia";
+import { Usuario } from "../../../Models/usuario";
 import { ProductoService } from "../../../Services/producto.service";
+import { UsuarioService } from "../../../Services/usuario.service";
 
 @Component({
   selector: "app-nuevo-producto",
@@ -16,16 +18,30 @@ export class NuevoProductoComponent implements OnInit {
     fecha_ingreso: Date,
     usuario_id: 1
   };
+  usuarios: Usuario[] = [];
   productos: Mercancia;
   mensajeOK = "";
   mensajeFail = "";
   constructor(
     private productoService: ProductoService,
-    private router: Router
+    private router: Router,
+    private usuarioService: UsuarioService
   ) {}
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.cargarUsuarios();
+  }
+  cargarUsuarios(): void {
+    this.usuarioService.lista().subscribe(
+      data => {
+        this.usuarios = data;
+        console.log(this.usuarios);
+      },
+      (err: any) => {
+        console.log(err);
+      }
+    );
+  }
   onCreate(form): void {
     console.log(form);
     this.productoService.crear(this.form).subscribe(

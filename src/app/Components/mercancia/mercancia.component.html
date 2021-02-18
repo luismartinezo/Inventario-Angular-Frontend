@@ -20,8 +20,8 @@
 			<td>{{producto.cantidad}}</td>
 			<td>{{producto.fecha_ingreso}}</td>
 			<td>{{producto.usuario_id}}</td>
-			<td><button type="button" class="btn btn-info">Detalle</button></td>
-			<td><button type="button" class="btn btn-warning">Editar</button></td>
+			<td><button type="button" class="btn btn-info" routerLink="/detalle/{{producto.id}}">Detalle</button></td>
+			<td><button type="button" class="btn btn-warning" routerLink="/editar/{{producto.id}}">Editar</button></td>
 			<td><button type="button" class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
 			</td>
 		</tr>
