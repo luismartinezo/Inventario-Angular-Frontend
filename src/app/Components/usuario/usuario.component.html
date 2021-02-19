@@ -19,7 +19,7 @@
 			<td>{{usuario.nombre}}</td>
 			<td>{{usuario.edad}}</td>
 			<td>{{usuario.cargo_id}}</td>
-			<td>{{usuario.fecha_ingreso}}</td>
+			<td>{{usuario.fecha_ingreso | date}}</td>
 			<td><button type="button" class="btn btn-info">Detalle</button></td>
 			<td><button type="button" class="btn btn-warning">Editar</button></td>
 			<td><button type="button" class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>

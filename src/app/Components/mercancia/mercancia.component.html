@@ -18,7 +18,7 @@
 			<th scope="row">{{producto.id}}</th>
 			<td>{{producto.nombre_producto}}</td>
 			<td>{{producto.cantidad}}</td>
-			<td>{{producto.fecha_ingreso}}</td>
+			<td>{{producto.fecha_ingreso | date}}</td>
 			<td>{{producto.usuario_id}}</td>
 			<td><button type="button" class="btn btn-info" routerLink="/detalle/{{producto.id}}">Detalle</button></td>
 			<td><button type="button" class="btn btn-warning" routerLink="/editar/{{producto.id}}">Editar</button></td>
