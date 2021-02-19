@@ -1,16 +1,19 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h5>Cantidaduev Producto</h5>
+			<h3>Agregar Productos</h3>
+			<hr>
 			<form name="form" (ngSubmit)="onCreate(f)" #f="ngForm" novalidate>
 				<div class="row">
 					<div class="col-md-3">
+						<h6>Nombre Producto</h6>
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Nombre"
                     name="nombre_producto" [(ngModel)]="form.nombre_producto" required>
 						  </div>
 						</div>
 						<div class="col-md-3">
+							<h6>Cantidad de Producto</h6>
 							<div class="form-group">
 								<input type="hidden" name="id" #id="ngModel" [(ngModel)]="form.id">
 								<input type="number" class="form-control" placeholder="Cantidad"
@@ -18,12 +21,14 @@
 						    </div>
 							</div>
 							<div class="col-md-3">
+								<h6>Fecha Ingreso Producto</h6>
 								<div class="form-group">
 									<input type="date" class="form-control" placeholder="Fecha Ingreso"
                     name="fecha_ingreso" [(ngModel)]="form.fecha_ingreso" required>
 						    </div>
 								</div>
 								<div class="col-md-3">
+									<h6>Usuario Registra</h6>
 									<div class="form-group">
 										<select name="usuario_id"  [(ngModel)]="form.usuario_id" class="form-control">
                       <option value="0">-Select-</option>

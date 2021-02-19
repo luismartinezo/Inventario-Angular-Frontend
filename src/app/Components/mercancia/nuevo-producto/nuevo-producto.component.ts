@@ -48,10 +48,11 @@ export class NuevoProductoComponent implements OnInit {
       data => {
         this.mensajeOK = data.message;
         alert(this.mensajeOK);
-        this.router.navigate(["productos"]);
+        this.router.navigate(["mercancias"]);
       },
       (err: any) => {
         this.mensajeFail = err.error.message;
+        alert(this.mensajeFail);
       }
     );
   }
